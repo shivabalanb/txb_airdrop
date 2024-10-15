@@ -2,11 +2,13 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
+import "../src/Airdrop.sol";
 
-contract CounterScript is Script {
-    function setUp() public {}
+contract DeployAirdrop is Script {
 
     function run() public {
-        vm.broadcast();
+        vm.startBroadcast();
+        new Airdrop();
+        vm.stopBroadcast();
     }
 }
